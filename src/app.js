@@ -11,7 +11,7 @@ const server  = Hapi.server({
 });
 
 //server init and router register
-const init = async () => {
+exports.init = async () => {
     await alertRoute(server);
     await agentsRoute(server);
     await rulesRoute(server);
@@ -23,9 +23,3 @@ process.on('unhandledRejection', (err) => {
     console.log(err);
     process.exit(1);
 });
-
-init();
-
-
-
-
