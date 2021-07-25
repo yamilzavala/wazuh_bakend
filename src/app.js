@@ -7,7 +7,13 @@ const {rulesRoute} = require('./routes/rules.router')
 //server configuration
 const server  = Hapi.server({
     port: 3000,
-    host: 'localhost'
+    host: 'localhost',
+    routes: {
+        cors: {
+            origin: ['*'],
+            credentials: true
+        }
+    }
 });
 
 //server init and router register

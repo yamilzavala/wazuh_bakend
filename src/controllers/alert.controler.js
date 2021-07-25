@@ -1,7 +1,7 @@
 const alerts = require('../data/alerts.json');
 const {pagination} = require('../shared/utils');
 
-exports.alertController =  async (request, h, offset, limit) => {
+exports.alertController =  async (request, h) => {
     const data = JSON.parse(JSON.stringify(alerts));
     const alertsData = [];
     data.map(currentAlert => alertsData.push(currentAlert));                       

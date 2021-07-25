@@ -8,6 +8,9 @@ exports.agentsRoute = (server) => {
                 method: 'GET',
                 path: '/agents',
                 options: {
+                    cors: {
+                        credentials: true
+                    },
                     handler: getAgentsController
                 }
             },
@@ -15,6 +18,9 @@ exports.agentsRoute = (server) => {
                 method: 'GET',
                 path: '/agents/{id}',
                 options: {
+                    cors: {
+                        credentials: true
+                    },
                     handler: getAgentByIdController
                 }
             }

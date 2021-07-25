@@ -7,6 +7,9 @@ exports.rulesRoute = (server) => {
             method: 'GET',
             path: '/rules',
             options: {
+                cors: {
+                    credentials: true
+                },
                 handler: getRulesController
             }
         },
@@ -14,6 +17,9 @@ exports.rulesRoute = (server) => {
             method: 'GET',
             path: '/rules/{id}',
             options: {
+                cors: {
+                    credentials: true
+                },
                 handler: getRuleByIdController
             }
         }

@@ -7,6 +7,9 @@ exports.alertRoute = (server) => {
             method: 'GET',
             path: '/alerts',
             options: {
+                cors: {
+                    credentials: true
+                },
                 handler: alertController
             }
         }
