@@ -1,5 +1,5 @@
 "use strict"
-const {alertController} = require('../controllers/alert.controler')
+const {alertController, getAlertsByAgent} = require('../controllers/alert.controler')
 
 exports.alertRoute = (server) => {
     return server.route([
@@ -11,6 +11,16 @@ exports.alertRoute = (server) => {
                     credentials: true
                 },
                 handler: alertController
+            }
+        },
+        {
+            method: 'GET',
+            path: '/alertsByAgent',
+            options: {
+                cors: {
+                    credentials: true
+                },
+                handler: getAlertsByAgent
             }
         }
     ]);
